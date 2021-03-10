@@ -1,0 +1,43 @@
+#get first 5
+.head()
+
+shows info of df
+.info()
+
+summary stats of data
+.describe()
+
+control freq, of data range
+.resample('M').mean() => take mean of columns per M <month>
+
+calculate change one index to next
+.pct_change() ---numpy
+
+replace NA values with 0
+.fillna(0, inplace=True)
+
+apply expression to every member
+.apply(lambda x: x[-1])
+
+create time window
+.rolling(window=50)
+
+moving average, 50 period/weeks/days
+m_avg = price.rolling(window=50).mean()
+
+last 5 
+.tail()
+
+.loc => search by index label, ex. datetime
+.iloc => search by number index
+
+.sample(20) takes 20 row sample
+
+aapl['Close'].plot(grid=True)
+
+daily_pct_change = daily_close / daily_close.shift(1) - 1
+
+moving_avg = adj_close_px.rolling(window=40).mean() => rlling avg 40 period
+
+vol = daily_pct_change.rolling(min_periods).std() * np.sqrt(min_periods)  => calculate volatility
+
